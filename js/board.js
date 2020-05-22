@@ -3,12 +3,14 @@ game.board  = {
     size: 15,
     cells: [],
     create() {
+        this.createCells();
+    },
+    createCells() {
         for (let row = 0; row < this.size; row++) {
             for (let col = 0; col < this.size; col++) {
                 this.cells.push(this.createCell(row, col));
             }
         }
-        console.log(this.cells);
     },
     createCell(row, col) {
         let cellSize = this.game.sprites.cell.width + 1;
@@ -26,5 +28,5 @@ game.board  = {
         this.cells.forEach(cell => {
             this.game.ctx.drawImage(this.game.sprites.cell, cell.x, cell.y);
         })
-    }
+    },
 };

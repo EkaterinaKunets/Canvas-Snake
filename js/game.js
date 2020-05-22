@@ -1,6 +1,6 @@
 const game = {
     canvas: null,
-    crx: null,
+    ctx: null,
     board: null,
     width: 640,
     height: 360,
