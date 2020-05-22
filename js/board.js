@@ -1,4 +1,4 @@
-game.board  = {
+game.board = {
     game: game,
     size: 15,
     cells: [],
@@ -13,7 +13,8 @@ game.board  = {
         }
     },
     createCell(row, col) {
-        let cellSize = this.game.sprites.cell.width + 1;
+        //Mac render don't draw 1px need 2px
+        let cellSize = this.game.sprites.cell.width + 2;
         let offsetX = (this.game.width - cellSize * this.size)/2;
         let offsetY = (this.game.height - cellSize * this.size)/2;
 
@@ -23,6 +24,11 @@ game.board  = {
             x: offsetX + cellSize * col,
             y: offsetY + cellSize * row,
         };
+    },
+    getCell(row, col) {
+        return this.cells.find(cell =>
+            cell.row === row && cell.col === col
+        );
     },
     render() {
         this.cells.forEach(cell => {
