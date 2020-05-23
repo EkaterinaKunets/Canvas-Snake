@@ -13,7 +13,7 @@ game.board = {
         }
     },
     createCell(row, col) {
-        //Mac render don't draw 1px need 2px
+        //Mac don't render 1px, need 2px (Retina)
         let cellSize = this.game.sprites.cell.width + 2;
         let offsetX = (this.game.width - cellSize * this.size)/2;
         let offsetY = (this.game.height - cellSize * this.size)/2;
